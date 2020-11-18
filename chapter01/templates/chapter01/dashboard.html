@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% load bootstrap4 %}
+
+{% block title%}ダッシュボード{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mb-3">{{title}}</h1>
+    <div>
+        {{user.email}} さん、こんにちは
+    </div>
+    <p><a href="{% url 'account_logout' %}">ログアウト</a></p>
+    
+    <div>
+        <div class="row my-2 ml-2">
+            <div class="col col-xl-5 p-3 border">
+                <a href="{% url 'book:book_list' %}">書籍一覧</a>
+            </div>
+        </div>
+        <div class="row my-2 ml-2">
+            <div class="col col-xl-5 py-3 border">
+                <a href="{% url 'book:author_list' %}">著者一覧</a>
+            </div>
+        </div>
+        <div class="row my-2 ml-2">
+            <div class="col col-xl-5 py-3 border">
+                <a href="{% url 'book:category_list' %}">カテゴリ一覧</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

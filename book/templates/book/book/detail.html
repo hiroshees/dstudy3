@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% load bootstrap4 %}
+{% load static %}
+
+{% block title %}書籍表示{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mb-3">書籍表示</h1>
+    <div class="mb-3">
+        <a href="{% url 'book:book_list'%}" class="btn btn-primary">一覧に戻る</a>
+    </div>
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <td>{{object.id}}</td>
+        </tr>
+        <tr>
+            <th>本名</th>
+            <td>{{object.title}}</td>
+        </tr>
+        <tr>
+            <th>金額</th>
+            <td>{{object.price}}</td>
+        </tr>
+        <tr>
+            <th>著者名</th>
+            <td>{{object.author.name}}</td>
+        </tr>
+        <tr>
+            <th>カテゴリ名</th>
+            <td>{{object.category.name}}</td>
+        </tr>
+        <tr>
+            <th>登録日</th>
+            <td>{{object.created}}</td>
+        </tr>
+        <tr>
+            <th>更新日</th>
+            <td>{{object.modified}}</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}
